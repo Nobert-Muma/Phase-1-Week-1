@@ -3,9 +3,18 @@
 Write a program whose major task is to calculate an individual’s Net Salary by getting the inputs of basic salary and benefits. 
 Calculate the payee (i.e. Tax), NHIF Deductions, NSSF Deductions, gross salary, and net salary. 
 */
-let basicSalary=parseFloat(prompt("Please enter your monthly basic salary:\n"));
-let benefits=parseFloat(prompt("How much do you get in allowances each month?"));
+let basicSalary//=parseFloat(prompt("Please enter your monthly basic salary:\n"));
+let benefits//=parseFloat(prompt("How much do you get in allowances each month?"));
 const personalRelief=2400;
+
+do {
+  basicSalary = parseFloat(prompt("Please enter your monthly basic salary(Use numbers only):\n"));
+} while (isNaN(basicSalary));
+
+do {
+  benefits = parseFloat(prompt("How much do you get in allowances each month?(Use numbers only)"));
+} while (isNaN(benefits));
+
 //Calculating gross salary
 grossSalary=grossSal(basicSalary, benefits);
 // Calculating taxable income 
@@ -20,11 +29,11 @@ nssfDeduction = nssfDeductions(basicSalary);
 netPay = netSalary(grossSalary, paye, nhifDeduction, nssfDeduction);
 
 function grossSal(basicSalary, benefits) {
-  return basicSalary + benefits;
+  return basicSalary+benefits;
 }
 
 function taxableIncome() {
-  return grossSalary - personalRelief;
+  return grossSalary-personalRelief;
 }
 //PAYE
 function tax() {
@@ -105,8 +114,6 @@ function netSalary(grossSalary, paye, nhif, nssf) {
   return grossSalary-(paye+nhif+nssf);
 }
 
-console.log("PAYE:\t" + Math.floor(paye*100)/100); 
-console.log("NHIF Deductions: \t"+nhifDeduction);
-console.log("NSSF Deductions: \t"+ Math.floor(nssfDeduction*100)/100);
-console.log("Gross Salary: \t"+grossSalary);
-console.log("Net Salary: \t"+netPay);
+console.log("PAYE:\t" + Math.floor(paye*100)/100+"\n"+"NHIF Deductions: \t"+nhifDeduction+"\n"+
+"NSSF Deductions: \t"+ Math.floor(nssfDeduction*100)/100+"\n"+
+"Gross Salary: \t"+grossSalary+"\n"+"Net Salary: \t"+netPay);
