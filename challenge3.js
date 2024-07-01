@@ -19,7 +19,7 @@ do {
 grossSalary=grossSal(basicSalary, benefits);
 // Calculating taxable income 
 taxIncome=taxableIncome();
-// Calculating PAYE (assuming taxIncome is already calculated)
+// Calculating PAYE 
 paye=tax();
 // Calculating NHIF deduction
 nhifDeduction = nhifDeductions(grossSalary);
