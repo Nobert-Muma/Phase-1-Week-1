@@ -21,18 +21,18 @@ let roundedDemeritPoints;
 function speedDetector() {
    speedOfCar = parseInt(speedOfCar);
    if (isNaN(speedOfCar) || speedOfCar < 0) {
-      return "Please input a number!.";
+      console.log("Please input a number!.");
    }
    else if (speedOfCarAndSpeedLimitDifference < 5) {
-      return "Ok";
+      console.log("Ok");
    } else if (speedOfCarAndSpeedLimitDifference >= 5 && speedOfCarAndSpeedLimitDifference <= 60) {
       demeritPointCalculator=speedOfCarAndSpeedLimitDifference/5;
       roundedDemeritPoints=Math.floor(demeritPointCalculator);
-      return `Points: ${roundedDemeritPoints}`;
+      console.log(`Points: ${roundedDemeritPoints}`);
    } else if (speedOfCarAndSpeedLimitDifference > 60) {
-      return "License suspended";
+      console.log("License suspended");
    } else {
-      return "Try again!";
+      console.log("Try again!");
    }
 }
 // Calling the speedDetector function to check the speed and display the appropriate message
