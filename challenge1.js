@@ -13,19 +13,19 @@ function studentGradeGenerator() {
     //if...else if statements to determine the grade the student has based on the marks the student has scored 
     if (studentMarks > 79 && studentMarks < 100) {
         grade="A";
-        return grade;
+        console.log(grade);
     } else if (studentMarks >= 60 && studentMarks <= 79) {
         grade="B";
-        return grade;
+        console.log(grade);
     } else if (studentMarks >= 50 && studentMarks <= 59) {
         grade="C";
-        return grade;
+        console.log(grade);
     } else if (studentMarks >= 40 && studentMarks <= 49) {
         grade="D";
-        return grade;
+        console.log(grade);
     } else if (studentMarks >= 1 && studentMarks < 40) {
         grade="E";
-        return grade;
+        console.log(grade);
     } else {
         //For marks outside the 0 to 100 range
         alert('Invalid input! Please try again');
